@@ -4,18 +4,7 @@
 
 #include <math.h>
 
-float get_positive_change()
-{
-    float x;
-
-    do
-    {
-        x = get_float("Change owed: ");
-    }
-    while (x < 0);
-
-    return x;
-}
+float get_positive_change();
 
 
 int main(void)
@@ -70,4 +59,17 @@ int main(void)
     printf("Nickels: %i\n", nickels);
 
     printf("Pennies: %i\n", pennies);
+}
+
+float get_positive_change()
+{
+    float x;
+
+    do
+    {
+        x = get_float("Change owed: ");
+    }
+    while (x < 0);
+
+    return x;
 }

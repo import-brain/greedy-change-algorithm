@@ -4,18 +4,28 @@
 
 #include <math.h>
 
-int main()
+float get_positive_change()
+{
+    float x;
+
+    do
+    {
+        x = get_float("Change owed: ");
+    }
+    while (x < 0);
+
+    return x;
+}
+
+
+int main(void)
 {
 
     // get input from user
 
     float changeAmount = 0;
 
-    do
-    {
-        changeAmount = get_float("Change owed: ");
-    }
-    while (changeAmount < 0);
+    changeAmount = get_positive_change();
 
     int cents = round(changeAmount * 100);
 
@@ -54,10 +64,10 @@ int main()
     }
 
     printf("Quarters: %i\n", quarters);
-    
+
     printf("Dimes: %i\n", dimes);
-    
+
     printf("Nickels: %i\n", nickels);
-    
+
     printf("Pennies: %i\n", pennies);
 }
